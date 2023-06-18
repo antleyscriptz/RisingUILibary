@@ -1,0 +1,528 @@
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88 
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER
+]=]
+
+-- Instances: 78 | Scripts: 2 | Modules: 0
+local GUI = {};
+
+-- StarterGui.MyLibary
+GUI["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+GUI["1"]["Name"] = [[MyLibary]];
+GUI["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+
+-- StarterGui.MyLibary.Main
+GUI["2"] = Instance.new("Frame", GUI["1"]);
+GUI["2"]["BackgroundColor3"] = Color3.fromRGB(43, 43, 43);
+GUI["2"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+GUI["2"]["Size"] = UDim2.new(0, 400, 0, 300);
+GUI["2"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+GUI["2"]["Name"] = [[Main]];
+
+-- StarterGui.MyLibary.Main.UICorner
+GUI["3"] = Instance.new("UICorner", GUI["2"]);
+GUI["3"]["CornerRadius"] = UDim.new(0, 3);
+
+-- StarterGui.MyLibary.Main.Topbar
+GUI["4"] = Instance.new("Frame", GUI["2"]);
+GUI["4"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+GUI["4"]["Size"] = UDim2.new(0, 400, 0, 25);
+GUI["4"]["Name"] = [[Topbar]];
+
+-- StarterGui.MyLibary.Main.Topbar.UICorner
+GUI["5"] = Instance.new("UICorner", GUI["4"]);
+GUI["5"]["CornerRadius"] = UDim.new(0, 4);
+
+-- StarterGui.MyLibary.Main.Topbar.Title
+GUI["6"] = Instance.new("TextLabel", GUI["4"]);
+GUI["6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["6"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+GUI["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+GUI["6"]["TextSize"] = 14;
+GUI["6"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["6"]["Size"] = UDim2.new(0, 80, 0, 24);
+GUI["6"]["Text"] = [[UI Libary]];
+GUI["6"]["Name"] = [[Title]];
+GUI["6"]["BackgroundTransparency"] = 1;
+
+-- StarterGui.MyLibary.Main.Topbar.Title.UIPadding
+GUI["7"] = Instance.new("UIPadding", GUI["6"]);
+GUI["7"]["PaddingRight"] = UDim.new(0, 8);
+GUI["7"]["PaddingLeft"] = UDim.new(0, 4);
+
+-- StarterGui.MyLibary.Main.Topbar.close
+GUI["8"] = Instance.new("ImageButton", GUI["4"]);
+GUI["8"]["ZIndex"] = 2;
+GUI["8"]["Image"] = [[rbxassetid://3926305904]];
+GUI["8"]["ImageRectSize"] = Vector2.new(24, 24);
+GUI["8"]["Size"] = UDim2.new(0, 24, 0, 24);
+GUI["8"]["Name"] = [[close]];
+GUI["8"]["ImageRectOffset"] = Vector2.new(284, 4);
+GUI["8"]["Position"] = UDim2.new(0.9399999976158142, 0, -0.019999999552965164, 0);
+GUI["8"]["BackgroundTransparency"] = 1;
+
+-- StarterGui.MyLibary.Main.Topbar.close.UICorner
+GUI["9"] = Instance.new("UICorner", GUI["8"]);
+
+
+-- StarterGui.MyLibary.Content
+GUI["a"] = Instance.new("Frame", GUI["1"]);
+GUI["a"]["BorderSizePixel"] = 0;
+GUI["a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["a"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+GUI["a"]["BackgroundTransparency"] = 1;
+GUI["a"]["Size"] = UDim2.new(0, 400, 0, 273);
+GUI["a"]["Position"] = UDim2.new(0.5, 0, 0.527550995349884, 0);
+GUI["a"]["Name"] = [[Content]];
+
+-- StarterGui.MyLibary.Content.HomeTab
+GUI["b"] = Instance.new("ScrollingFrame", GUI["a"]);
+GUI["b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["b"]["BackgroundTransparency"] = 1;
+GUI["b"]["Size"] = UDim2.new(1, 0, 0.9084249138832092, 32);
+GUI["b"]["Selectable"] = false;
+GUI["b"]["ScrollBarThickness"] = 0;
+GUI["b"]["Name"] = [[HomeTab]];
+GUI["b"]["SelectionGroup"] = false;
+
+-- StarterGui.MyLibary.Content.HomeTab.UIPadding
+GUI["c"] = Instance.new("UIPadding", GUI["b"]);
+GUI["c"]["PaddingTop"] = UDim.new(0, 1);
+GUI["c"]["PaddingRight"] = UDim.new(0, 1);
+GUI["c"]["PaddingBottom"] = UDim.new(0, 1);
+GUI["c"]["PaddingLeft"] = UDim.new(0, 1);
+
+-- StarterGui.MyLibary.Content.HomeTab.Button
+GUI["d"] = Instance.new("Frame", GUI["b"]);
+GUI["d"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+GUI["d"]["Size"] = UDim2.new(0.800000011920929, 30, -0.019535498693585396, 32);
+GUI["d"]["Position"] = UDim2.new(0.07005024701356888, 0, -0.004999999888241291, 0);
+GUI["d"]["Name"] = [[Button]];
+
+-- StarterGui.MyLibary.Content.HomeTab.Button.UICorner
+GUI["e"] = Instance.new("UICorner", GUI["d"]);
+GUI["e"]["CornerRadius"] = UDim.new(0, 4);
+
+-- StarterGui.MyLibary.Content.HomeTab.Button.UIStroke
+GUI["f"] = Instance.new("UIStroke", GUI["d"]);
+GUI["f"]["Color"] = Color3.fromRGB(118, 118, 118);
+
+-- StarterGui.MyLibary.Content.HomeTab.Button.TextLabel
+GUI["10"] = Instance.new("TextLabel", GUI["d"]);
+GUI["10"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["10"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+GUI["10"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Heavy, Enum.FontStyle.Normal);
+GUI["10"]["TextSize"] = 14;
+GUI["10"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["10"]["Size"] = UDim2.new(0, 198, 0, 27);
+GUI["10"]["Text"] = [[Button]];
+GUI["10"]["BackgroundTransparency"] = 1;
+GUI["10"]["Position"] = UDim2.new(0.02571287378668785, -5, -1, 0);
+
+-- StarterGui.MyLibary.Content.HomeTab.Button.UIPadding
+GUI["11"] = Instance.new("UIPadding", GUI["d"]);
+GUI["11"]["PaddingTop"] = UDim.new(0, 6);
+GUI["11"]["PaddingRight"] = UDim.new(0, 6);
+GUI["11"]["PaddingBottom"] = UDim.new(0, 6);
+GUI["11"]["PaddingLeft"] = UDim.new(0, 6);
+
+-- StarterGui.MyLibary.Content.HomeTab.Button.ImageButton
+GUI["12"] = Instance.new("ImageButton", GUI["d"]);
+GUI["12"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["12"]["AnchorPoint"] = Vector2.new(1, 0);
+GUI["12"]["Image"] = [[rbxassetid://13780673700]];
+GUI["12"]["Size"] = UDim2.new(0, 20, 0, 20);
+GUI["12"]["Position"] = UDim2.new(1.01618492603302, 0, -0.5, 0);
+GUI["12"]["BackgroundTransparency"] = 1;
+
+-- StarterGui.MyLibary.Content.HomeTab.UIListLayout
+GUI["13"] = Instance.new("UIListLayout", GUI["b"]);
+GUI["13"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
+GUI["13"]["Padding"] = UDim.new(0, 6);
+GUI["13"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+-- StarterGui.MyLibary.Content.HomeTab.Slider
+GUI["14"] = Instance.new("Frame", GUI["b"]);
+GUI["14"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+GUI["14"]["Size"] = UDim2.new(0.7849245071411133, 30, -0.022627178579568863, 40);
+GUI["14"]["Position"] = UDim2.new(0.07000000029802322, 0, -0.004999999888241291, 0);
+GUI["14"]["Name"] = [[Slider]];
+
+-- StarterGui.MyLibary.Content.HomeTab.Slider.UICorner
+GUI["15"] = Instance.new("UICorner", GUI["14"]);
+GUI["15"]["CornerRadius"] = UDim.new(0, 4);
+
+-- StarterGui.MyLibary.Content.HomeTab.Slider.UIStroke
+GUI["16"] = Instance.new("UIStroke", GUI["14"]);
+GUI["16"]["Color"] = Color3.fromRGB(118, 118, 118);
+
+-- StarterGui.MyLibary.Content.HomeTab.Slider.TextLabel
+GUI["17"] = Instance.new("TextLabel", GUI["14"]);
+GUI["17"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["17"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+GUI["17"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Heavy, Enum.FontStyle.Normal);
+GUI["17"]["TextSize"] = 14;
+GUI["17"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["17"]["Size"] = UDim2.new(0, 170, 0, 17);
+GUI["17"]["Text"] = [[Slider]];
+GUI["17"]["BackgroundTransparency"] = 1;
+GUI["17"]["Position"] = UDim2.new(0.005783353932201862, -2, -0.4044588804244995, 0);
+
+-- StarterGui.MyLibary.Content.HomeTab.Slider.UIPadding
+GUI["18"] = Instance.new("UIPadding", GUI["14"]);
+GUI["18"]["PaddingTop"] = UDim.new(0, 6);
+GUI["18"]["PaddingRight"] = UDim.new(0, 6);
+GUI["18"]["PaddingBottom"] = UDim.new(0, 6);
+GUI["18"]["PaddingLeft"] = UDim.new(0, 6);
+
+-- StarterGui.MyLibary.Content.HomeTab.Slider.Value
+GUI["19"] = Instance.new("TextLabel", GUI["14"]);
+GUI["19"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["19"]["TextXAlignment"] = Enum.TextXAlignment.Right;
+GUI["19"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Heavy, Enum.FontStyle.Normal);
+GUI["19"]["TextSize"] = 14;
+GUI["19"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["19"]["AnchorPoint"] = Vector2.new(1, 0);
+GUI["19"]["Size"] = UDim2.new(-0.36628395318984985, 154, 0.5725370049476624, 10);
+GUI["19"]["Text"] = [[100]];
+GUI["19"]["Name"] = [[Value]];
+GUI["19"]["BackgroundTransparency"] = 1;
+GUI["19"]["Position"] = UDim2.new(0.9559944272041321, 20, -0.12967805564403534, -6);
+
+-- StarterGui.MyLibary.Content.HomeTab.Slider.SliderBack
+GUI["1a"] = Instance.new("Frame", GUI["14"]);
+GUI["1a"]["BackgroundColor3"] = Color3.fromRGB(40, 40, 40);
+GUI["1a"]["Size"] = UDim2.new(0, 326, 0, 6);
+GUI["1a"]["Position"] = UDim2.new(0, 2, 0, 10);
+GUI["1a"]["Name"] = [[SliderBack]];
+
+-- StarterGui.MyLibary.Content.HomeTab.Slider.SliderBack.UICorner
+GUI["1b"] = Instance.new("UICorner", GUI["1a"]);
+
+
+-- StarterGui.MyLibary.Content.HomeTab.Slider.SliderBack.UIStroke
+GUI["1c"] = Instance.new("UIStroke", GUI["1a"]);
+GUI["1c"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+-- StarterGui.MyLibary.Content.HomeTab.Slider.SliderBack.Draggable
+GUI["1d"] = Instance.new("Frame", GUI["1a"]);
+GUI["1d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["1d"]["Size"] = UDim2.new(0, 8, 0, 6);
+GUI["1d"]["Name"] = [[Draggable]];
+
+-- StarterGui.MyLibary.Content.HomeTab.Slider.SliderBack.Draggable.UICorner
+GUI["1e"] = Instance.new("UICorner", GUI["1d"]);
+
+
+-- StarterGui.MyLibary.Content.HomeTab.Dropdown
+GUI["1f"] = Instance.new("Frame", GUI["b"]);
+GUI["1f"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+GUI["1f"]["Size"] = UDim2.new(0.7999998927116394, 30, -0.00834609754383564, 32);
+GUI["1f"]["ClipsDescendants"] = true;
+GUI["1f"]["Position"] = UDim2.new(0.06450004875659943, 0, 0.22165538370609283, 0);
+GUI["1f"]["Name"] = [[Dropdown]];
+
+-- StarterGui.MyLibary.Content.HomeTab.Dropdown.UICorner
+GUI["20"] = Instance.new("UICorner", GUI["1f"]);
+GUI["20"]["CornerRadius"] = UDim.new(0, 4);
+
+-- StarterGui.MyLibary.Content.HomeTab.Dropdown.UIStroke
+GUI["21"] = Instance.new("UIStroke", GUI["1f"]);
+GUI["21"]["Color"] = Color3.fromRGB(118, 118, 118);
+
+-- StarterGui.MyLibary.Content.HomeTab.Dropdown.UIPadding
+GUI["22"] = Instance.new("UIPadding", GUI["1f"]);
+GUI["22"]["PaddingTop"] = UDim.new(0, 6);
+GUI["22"]["PaddingRight"] = UDim.new(0, 6);
+GUI["22"]["PaddingBottom"] = UDim.new(0, 6);
+GUI["22"]["PaddingLeft"] = UDim.new(0, 6);
+
+-- StarterGui.MyLibary.Content.HomeTab.Dropdown.close
+GUI["23"] = Instance.new("ImageButton", GUI["1f"]);
+GUI["23"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["23"]["AnchorPoint"] = Vector2.new(1, 0);
+GUI["23"]["Image"] = [[rbxassetid://13780673700]];
+GUI["23"]["Size"] = UDim2.new(0, 20, 0, 20);
+GUI["23"]["Name"] = [[close]];
+GUI["23"]["Position"] = UDim2.new(1.0072669982910156, 0, -0.15212135016918182, 0);
+GUI["23"]["BackgroundTransparency"] = 1;
+
+-- StarterGui.MyLibary.Content.HomeTab.Dropdown.OptionsHolder
+GUI["24"] = Instance.new("Frame", GUI["1f"]);
+GUI["24"]["BackgroundColor3"] = Color3.fromRGB(34, 34, 34);
+GUI["24"]["BackgroundTransparency"] = 1;
+GUI["24"]["Size"] = UDim2.new(0, 331, 0, 56);
+GUI["24"]["ClipsDescendants"] = true;
+GUI["24"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+GUI["24"]["Position"] = UDim2.new(0.015261155553162098, 0, 0.21199780702590942, 0);
+GUI["24"]["Visible"] = false;
+GUI["24"]["Name"] = [[OptionsHolder]];
+
+-- StarterGui.MyLibary.Content.HomeTab.Dropdown.OptionsHolder.UIListLayout
+GUI["25"] = Instance.new("UIListLayout", GUI["24"]);
+GUI["25"]["Padding"] = UDim.new(0, 6);
+GUI["25"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+-- StarterGui.MyLibary.Content.HomeTab.Dropdown.OptionsHolder.ActiveOption
+GUI["26"] = Instance.new("TextLabel", GUI["24"]);
+GUI["26"]["BackgroundColor3"] = Color3.fromRGB(104, 104, 104);
+GUI["26"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+GUI["26"]["TextSize"] = 14;
+GUI["26"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["26"]["Size"] = UDim2.new(0, 329, 0, 14);
+GUI["26"]["Text"] = [[ Add option..]];
+GUI["26"]["Name"] = [[ActiveOption]];
+
+-- StarterGui.MyLibary.Content.HomeTab.Dropdown.OptionsHolder.ActiveOption.UICorner
+GUI["27"] = Instance.new("UICorner", GUI["26"]);
+
+
+-- StarterGui.MyLibary.Content.HomeTab.Dropdown.OptionsHolder.ActiveOption.UIStroke
+GUI["28"] = Instance.new("UIStroke", GUI["26"]);
+GUI["28"]["Color"] = Color3.fromRGB(255, 255, 255);
+GUI["28"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+
+-- StarterGui.MyLibary.Content.HomeTab.Dropdown.OptionsHolder.HoverOption
+GUI["29"] = Instance.new("TextLabel", GUI["24"]);
+GUI["29"]["BackgroundColor3"] = Color3.fromRGB(73, 73, 73);
+GUI["29"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+GUI["29"]["TextSize"] = 14;
+GUI["29"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["29"]["Size"] = UDim2.new(0, 329, 0, 14);
+GUI["29"]["Text"] = [[ Add option..]];
+GUI["29"]["Name"] = [[HoverOption]];
+
+-- StarterGui.MyLibary.Content.HomeTab.Dropdown.OptionsHolder.HoverOption.UICorner
+GUI["2a"] = Instance.new("UICorner", GUI["29"]);
+
+
+-- StarterGui.MyLibary.Content.HomeTab.Dropdown.OptionsHolder.HoverOption.UIStroke
+GUI["2b"] = Instance.new("UIStroke", GUI["29"]);
+GUI["2b"]["Color"] = Color3.fromRGB(255, 255, 255);
+GUI["2b"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+
+-- StarterGui.MyLibary.Content.HomeTab.Dropdown.OptionsHolder.InactOption
+GUI["2c"] = Instance.new("TextLabel", GUI["24"]);
+GUI["2c"]["BackgroundColor3"] = Color3.fromRGB(41, 41, 41);
+GUI["2c"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+GUI["2c"]["TextSize"] = 14;
+GUI["2c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["2c"]["Size"] = UDim2.new(0, 329, 0, 14);
+GUI["2c"]["Text"] = [[ Add option..]];
+GUI["2c"]["Name"] = [[InactOption]];
+
+-- StarterGui.MyLibary.Content.HomeTab.Dropdown.OptionsHolder.InactOption.UICorner
+GUI["2d"] = Instance.new("UICorner", GUI["2c"]);
+
+
+-- StarterGui.MyLibary.Content.HomeTab.Dropdown.OptionsHolder.InactOption.UIStroke
+GUI["2e"] = Instance.new("UIStroke", GUI["2c"]);
+GUI["2e"]["Color"] = Color3.fromRGB(255, 255, 255);
+GUI["2e"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+
+-- StarterGui.MyLibary.Content.HomeTab.Dropdown.OptionsHolder.UICorner
+GUI["2f"] = Instance.new("UICorner", GUI["24"]);
+GUI["2f"]["CornerRadius"] = UDim.new(0, 1);
+
+-- StarterGui.MyLibary.Content.HomeTab.Dropdown.TextLabel
+GUI["30"] = Instance.new("TextLabel", GUI["1f"]);
+GUI["30"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["30"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+GUI["30"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Heavy, Enum.FontStyle.Normal);
+GUI["30"]["TextSize"] = 14;
+GUI["30"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["30"]["Size"] = UDim2.new(0, 198, 0, 27);
+GUI["30"]["Text"] = [[Dropdown]];
+GUI["30"]["BackgroundTransparency"] = 1;
+GUI["30"]["Position"] = UDim2.new(0.025712875649333, -5, -0.7923868894577026, 0);
+
+-- StarterGui.MyLibary.Content.HomeTab.Toggle
+GUI["31"] = Instance.new("Frame", GUI["b"]);
+GUI["31"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+GUI["31"]["Size"] = UDim2.new(0.7999998927116394, 30, 0.0073333303444087505, 32);
+GUI["31"]["Position"] = UDim2.new(0.06450004875659943, 0, 0.3411543667316437, 0);
+GUI["31"]["Name"] = [[Toggle]];
+
+-- StarterGui.MyLibary.Content.HomeTab.Toggle.UICorner
+GUI["32"] = Instance.new("UICorner", GUI["31"]);
+GUI["32"]["CornerRadius"] = UDim.new(0, 4);
+
+-- StarterGui.MyLibary.Content.HomeTab.Toggle.UIStroke
+GUI["33"] = Instance.new("UIStroke", GUI["31"]);
+GUI["33"]["Color"] = Color3.fromRGB(118, 118, 118);
+
+-- StarterGui.MyLibary.Content.HomeTab.Toggle.TextLabel
+GUI["34"] = Instance.new("TextLabel", GUI["31"]);
+GUI["34"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["34"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+GUI["34"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Heavy, Enum.FontStyle.Normal);
+GUI["34"]["TextSize"] = 14;
+GUI["34"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["34"]["Size"] = UDim2.new(0, 198, 0, 27);
+GUI["34"]["Text"] = [[Toggle]];
+GUI["34"]["BackgroundTransparency"] = 1;
+GUI["34"]["Position"] = UDim2.new(0.02274022251367569, -5, -0.28278258442878723, 0);
+
+-- StarterGui.MyLibary.Content.HomeTab.Toggle.UIPadding
+GUI["35"] = Instance.new("UIPadding", GUI["31"]);
+GUI["35"]["PaddingTop"] = UDim.new(0, 6);
+GUI["35"]["PaddingRight"] = UDim.new(0, 6);
+GUI["35"]["PaddingBottom"] = UDim.new(0, 6);
+GUI["35"]["PaddingLeft"] = UDim.new(0, 6);
+
+-- StarterGui.MyLibary.Content.HomeTab.Toggle.Checkboxholder
+GUI["36"] = Instance.new("Frame", GUI["31"]);
+GUI["36"]["BackgroundColor3"] = Color3.fromRGB(71, 71, 71);
+GUI["36"]["Size"] = UDim2.new(0, 23, 0, 23);
+GUI["36"]["Position"] = UDim2.new(0.9378618001937866, 0, -0.004601098597049713, 0);
+GUI["36"]["Name"] = [[Checkboxholder]];
+
+-- StarterGui.MyLibary.Content.HomeTab.Toggle.Checkboxholder.UICorner
+GUI["37"] = Instance.new("UICorner", GUI["36"]);
+
+
+-- StarterGui.MyLibary.Content.HomeTab.Toggle.Checkboxholder.ImageButton
+GUI["38"] = Instance.new("ImageButton", GUI["36"]);
+GUI["38"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["38"]["Image"] = [[rbxassetid://13782421748]];
+GUI["38"]["Size"] = UDim2.new(0, 23, 0, 23);
+GUI["38"]["BackgroundTransparency"] = 1;
+
+-- StarterGui.MyLibary.Content.HomeTab.Toggle.Checkboxholder.ImageButton.UICorner
+GUI["39"] = Instance.new("UICorner", GUI["38"]);
+
+
+-- StarterGui.MyLibary.Content.HomeTab.Warning
+GUI["3a"] = Instance.new("Frame", GUI["b"]);
+GUI["3a"]["BackgroundColor3"] = Color3.fromRGB(163, 149, 23);
+GUI["3a"]["Size"] = UDim2.new(0.4708542227745056, 30, -0.014896419830620289, 32);
+GUI["3a"]["Position"] = UDim2.new(-0.10132910311222076, 0, 0.49111634492874146, 0);
+GUI["3a"]["Name"] = [[Warning]];
+
+-- StarterGui.MyLibary.Content.HomeTab.Warning.UICorner
+GUI["3b"] = Instance.new("UICorner", GUI["3a"]);
+GUI["3b"]["CornerRadius"] = UDim.new(0, 4);
+
+-- StarterGui.MyLibary.Content.HomeTab.Warning.UIStroke
+GUI["3c"] = Instance.new("UIStroke", GUI["3a"]);
+GUI["3c"]["Color"] = Color3.fromRGB(249, 249, 249);
+
+-- StarterGui.MyLibary.Content.HomeTab.Warning.Title
+GUI["3d"] = Instance.new("TextLabel", GUI["3a"]);
+GUI["3d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["3d"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+GUI["3d"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Heavy, Enum.FontStyle.Normal);
+GUI["3d"]["TextSize"] = 14;
+GUI["3d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["3d"]["Size"] = UDim2.new(0, 114, 0, 27);
+GUI["3d"]["Text"] = [[Warning]];
+GUI["3d"]["Name"] = [[Title]];
+GUI["3d"]["BackgroundTransparency"] = 1;
+GUI["3d"]["Position"] = UDim2.new(0.16746874153614044, -5, -0.5198351740837097, 0);
+
+-- StarterGui.MyLibary.Content.HomeTab.Warning.UIPadding
+GUI["3e"] = Instance.new("UIPadding", GUI["3a"]);
+GUI["3e"]["PaddingTop"] = UDim.new(0, 6);
+GUI["3e"]["PaddingRight"] = UDim.new(0, 6);
+GUI["3e"]["PaddingBottom"] = UDim.new(0, 6);
+GUI["3e"]["PaddingLeft"] = UDim.new(0, 6);
+
+-- StarterGui.MyLibary.Content.HomeTab.Warning.warning
+GUI["3f"] = Instance.new("ImageButton", GUI["3a"]);
+GUI["3f"]["ZIndex"] = 2;
+GUI["3f"]["LayoutOrder"] = 1;
+GUI["3f"]["Image"] = [[rbxassetid://3926305904]];
+GUI["3f"]["ImageRectSize"] = Vector2.new(36, 36);
+GUI["3f"]["Size"] = UDim2.new(0, 25, 0, 25);
+GUI["3f"]["Name"] = [[warning]];
+GUI["3f"]["ImageRectOffset"] = Vector2.new(364, 324);
+GUI["3f"]["Position"] = UDim2.new(-0.030770318582654, 0, -0.627081036567688, 0);
+GUI["3f"]["BackgroundTransparency"] = 1;
+
+-- StarterGui.MyLibary.Content.Frame
+GUI["40"] = Instance.new("Frame", GUI["a"]);
+GUI["40"]["ZIndex"] = 10;
+GUI["40"]["BorderSizePixel"] = 0;
+GUI["40"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["40"]["Size"] = UDim2.new(1, 0, 0, 30);
+GUI["40"]["Visible"] = false;
+
+-- StarterGui.MyLibary.Content.Frame.UIGradient
+GUI["41"] = Instance.new("UIGradient", GUI["40"]);
+GUI["41"]["Transparency"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 0),NumberSequenceKeypoint.new(0.494, 0.6000000238418579),NumberSequenceKeypoint.new(1.000, 1)};
+GUI["41"]["Rotation"] = 90;
+GUI["41"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(42, 42, 42)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(43, 43, 43))};
+
+
+
+
+
+
+-- StarterGui.MyLibary.Navi.ActiveButton
+GUI["46"] = Instance.new("TextButton", GUI["42"]);
+GUI["46"]["AutoButtonColor"] = false;
+GUI["46"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+GUI["46"]["BackgroundColor3"] = Color3.fromRGB(86, 86, 86);
+GUI["46"]["TextSize"] = 14;
+GUI["46"]["FontFace"] = Font.new([[rbxasset://fonts/families/Ubuntu.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+GUI["46"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["46"]["Size"] = UDim2.new(0, 87, 0, 30);
+GUI["46"]["Name"] = [[ActiveButton]];
+GUI["46"]["Text"] = [[          Button]];
+GUI["46"]["Position"] = UDim2.new(1.75388379375363e-07, 0, 0.4518272280693054, 0);
+
+-- StarterGui.MyLibary.Navi.ActiveButton.UICorner
+GUI["47"] = Instance.new("UICorner", GUI["46"]);
+GUI["47"]["CornerRadius"] = UDim.new(0, 2);
+
+-- StarterGui.MyLibary.Navi.ActiveButton.LocalScript
+GUI["48"] = Instance.new("LocalScript", GUI["46"]);
+
+
+-- StarterGui.MyLibary.Navi.ActiveButton.HomeIcon
+GUI["49"] = Instance.new("ImageButton", GUI["46"]);
+GUI["49"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["49"]["Image"] = [[rbxassetid://13783741917]];
+GUI["49"]["Size"] = UDim2.new(0, 24, 0, 24);
+GUI["49"]["Name"] = [[HomeIcon]];
+GUI["49"]["Position"] = UDim2.new(0, 0, 0.10000000149011612, 0);
+GUI["49"]["BackgroundTransparency"] = 1;
+
+
+
+-- StarterGui.MyLibary.Navi.InactiveButton
+GUI["4b"] = Instance.new("TextButton", GUI["42"]);
+GUI["4b"]["AutoButtonColor"] = false;
+GUI["4b"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+GUI["4b"]["BackgroundColor3"] = Color3.fromRGB(67, 67, 67);
+GUI["4b"]["TextSize"] = 14;
+GUI["4b"]["FontFace"] = Font.new([[rbxasset://fonts/families/Ubuntu.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+GUI["4b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["4b"]["Size"] = UDim2.new(0, 87, 0, 30);
+GUI["4b"]["Name"] = [[InactiveButton]];
+GUI["4b"]["Text"] = [[          Button]];
+GUI["4b"]["Position"] = UDim2.new(0.17241397500038147, 0, 0.44203320145606995, 0);
+
+-- StarterGui.MyLibary.Navi.InactiveButton.UICorner
+GUI["4c"] = Instance.new("UICorner", GUI["4b"]);
+GUI["4c"]["CornerRadius"] = UDim.new(0, 2);
+
+-- StarterGui.MyLibary.Navi.InactiveButton.LocalScript
+GUI["4d"] = Instance.new("LocalScript", GUI["4b"]);
+
+
+-- StarterGui.MyLibary.Navi.InactiveButton.HomeIcon
+GUI["4e"] = Instance.new("ImageButton", GUI["4b"]);
+GUI["4e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+GUI["4e"]["Image"] = [[rbxassetid://13783741917]];
+GUI["4e"]["Size"] = UDim2.new(0, 24, 0, 24);
+GUI["4e"]["Name"] = [[HomeIcon]];
+GUI["4e"]["Position"] = UDim2.new(0, 0, 0.10000000149011612, 0);
+GUI["4e"]["BackgroundTransparency"] = 1;
+
+
+return GUI["1"], require;
